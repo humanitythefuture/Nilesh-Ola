@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="flex-help-navbar-1">
+            <!-- <div class="spotify-logo"> -->
+            <svg class="spotify-logo" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12.001 2C17.551 2 22.001 6.5 22.001 12C22.001 17.5 17.501 22 12.001 22C6.50098 22 2.00098 17.5 2.00098 12C2.00098 6.5 6.50098 2 12.001 2ZM12.001 4C7.60555 4 4.00098 7.60457 4.00098 12C4.00098 16.3954 7.60555 20 12.001 20C16.3964 20 20.001 16.3954 20.001 12C20.001 7.58572 16.4276 4 12.001 4ZM15.751 16.65C13.401 15.2 10.451 14.8992 6.95014 15.6992C6.60181 15.8008 6.30098 15.55 6.20098 15.25C6.10098 14.8992 6.35098 14.6 6.65098 14.5C10.451 13.6492 13.751 14 16.351 15.6C16.701 15.75 16.7501 16.1492 16.6018 16.45C16.4018 16.7492 16.0518 16.85 15.751 16.65ZM16.7501 13.95C14.051 12.3 9.95098 11.8 6.80098 12.8C6.40181 12.9 5.95098 12.7 5.85098 12.3C5.75098 11.9 5.95098 11.4492 6.35098 11.3492C10.001 10.25 14.501 10.8008 17.601 12.7C17.9018 12.8508 18.051 13.35 17.8018 13.7C17.551 14.05 17.101 14.2 16.7501 13.95ZM6.30098 9.75083C5.80098 9.9 5.30098 9.6 5.15098 9.15C5.00098 8.64917 5.30098 8.15 5.75098 7.99917C9.30098 6.94917 15.151 7.14917 18.8518 9.35C19.301 9.6 19.451 10.2 19.201 10.65C18.9518 11.0008 18.351 11.1492 17.9018 10.9C14.701 9 9.35098 8.8 6.30098 9.75083Z" />
+            </svg>
+            <!-- </div> -->
+            <div class="home-logo">
+                <svg data-encore-id="icon" role="img" aria-hidden="true" class="e-91000-icon e-91000-baseline"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732z">
+                    </path>
+                </svg>
+            </div>
+            <div id="search-bar">
+                <div class="flex-help-searchbar-1">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" />
+                    </svg>
+
+                    <input id="input-search" placeholder="What do you want to play? " type="text">
+                </div>
+                <div class="flex-help-searchbar-2">|
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="fill: white;"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19ZM14 9V15H10V9H5L12 2L19 9H14Z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right-things">
+
+            <button class="explore-premium">Explore Premium</button>
+            <a href="/" class="install-app"><svg viewBox="0 0 24 24" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M13 13V18.585L14.8284 16.7574L16.2426 18.1716L12 22.4142L7.75736 18.1716L9.17157 16.7574L11 18.585V13H13ZM12 2C15.5934 2 18.5544 4.70761 18.9541 8.19395C21.2858 8.83154 23 10.9656 23 13.5C23 16.3688 20.8036 18.7246 18.0006 18.9776L18.0009 16.9644C19.6966 16.7214 21 15.2629 21 13.5C21 11.567 19.433 10 17.5 10C17.2912 10 17.0867 10.0183 16.8887 10.054C16.9616 9.7142 17 9.36158 17 9C17 6.23858 14.7614 4 12 4C9.23858 4 7 6.23858 7 9C7 9.36158 7.03838 9.7142 7.11205 10.0533C6.91331 10.0183 6.70879 10 6.5 10C4.567 10 3 11.567 3 13.5C3 15.2003 4.21241 16.6174 5.81986 16.934L6.00005 16.9646L6.00039 18.9776C3.19696 18.7252 1 16.3692 1 13.5C1 10.9656 2.71424 8.83154 5.04648 8.19411C5.44561 4.70761 8.40661 2 12 2Z" />
+                </svg>&nbsp; Install App</a>
+
+            <button class="bell-icon"><svg data-encore-id="icon" role="img" aria-hidden="true"
+                    class="e-91000-icon e-91000-baseline" viewBox="0 0 16 16"
+                    style="--encore-icon-height: var(--encore-graphic-size-decorative-smaller); --encore-icon-width: var(--encore-graphic-size-decorative-smaller);">
+                    <path
+                        d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4m-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569zm4.5 8a1 1 0 1 0 2 0z">
+                    </path>
+                </svg></button>
+
+            <button class="people-icon"><svg data-encore-id="icon" role="img" aria-hidden="true"
+                    class="e-91000-icon e-91000-baseline" viewBox="0 0 16 16"
+                    style="--encore-icon-height: var(--encore-graphic-size-decorative-smaller); --encore-icon-width: var(--encore-graphic-size-decorative-smaller);">
+                    <path
+                        d="M3.849 10.034c-.021-.465.026-.93.139-1.381H1.669c.143-.303.375-.556.665-.724l.922-.532a1.63 1.63 0 0 0 .436-2.458 1.8 1.8 0 0 1-.474-1.081q-.014-.287.057-.563a1.12 1.12 0 0 1 .627-.7 1.2 1.2 0 0 1 .944 0q.225.1.392.281c.108.12.188.263.237.417q.074.276.057.561a1.8 1.8 0 0 1-.475 1.084 1.6 1.6 0 0 0-.124 1.9c.36-.388.792-.702 1.272-.927v-.015c.48-.546.768-1.233.821-1.958a3.2 3.2 0 0 0-.135-1.132 2.657 2.657 0 0 0-5.04 0c-.111.367-.157.75-.135 1.133.053.724.341 1.41.821 1.955A.13.13 0 0 1 2.565 6a.13.13 0 0 1-.063.091l-.922.532A3.2 3.2 0 0 0-.004 9.396v.75h3.866c.001-.033-.01-.071-.013-.112m10.568-3.4-.922-.532a.13.13 0 0 1-.064-.091.12.12 0 0 1 .028-.1c.48-.546.768-1.233.821-1.958a3.3 3.3 0 0 0-.135-1.135A2.64 2.64 0 0 0 12.7 1.233a2.67 2.67 0 0 0-3.042.64 2.65 2.65 0 0 0-.554.948c-.11.367-.156.75-.134 1.133.053.724.341 1.41.821 1.955.005.006 0 .011 0 .018.48.225.911.54 1.272.927a1.6 1.6 0 0 0-.125-1.907 1.8 1.8 0 0 1-.474-1.081q-.015-.287.057-.563a1.12 1.12 0 0 1 .627-.7 1.2 1.2 0 0 1 .944 0q.225.1.392.281.162.182.236.413c.05.184.07.375.058.565a1.8 1.8 0 0 1-.475 1.084 1.633 1.633 0 0 0 .438 2.456l.922.532c.29.169.52.421.664.724h-2.319c.113.452.16.918.139 1.383 0 .04-.013.078-.017.117h3.866v-.75a3.2 3.2 0 0 0-1.58-2.778v.004zm-3.625 6-.922-.532a.13.13 0 0 1-.061-.144.1.1 0 0 1 .025-.047 3.33 3.33 0 0 0 .821-1.958 3.2 3.2 0 0 0-.135-1.132 2.657 2.657 0 0 0-5.041 0c-.11.367-.156.75-.134 1.133.053.724.341 1.41.821 1.955a.13.13 0 0 1 .028.106.13.13 0 0 1-.063.091l-.922.532a3.2 3.2 0 0 0-1.584 2.773v.75h8.75v-.75a3.2 3.2 0 0 0-1.583-2.781zm-5.5 2.023c.143-.303.375-.556.665-.724l.922-.532a1.63 1.63 0 0 0 .436-2.458 1.8 1.8 0 0 1-.474-1.081q-.015-.287.057-.563a1.12 1.12 0 0 1 .627-.7 1.2 1.2 0 0 1 .944 0q.225.1.392.281c.108.12.188.263.237.417q.073.276.057.561a1.8 1.8 0 0 1-.475 1.084 1.632 1.632 0 0 0 .438 2.456l.922.532c.29.169.52.421.664.724z">
+                    </path>
+                </svg></button>
+            <button class="profile">
+                <div>N</div>
+            </button>
+        </div>
+    </nav>
+    <main>
+        <div class="side-panel">
+            <div class="your-library">
+                <h2> Your Library</h2>
+                <button class="plus-button"><svg data-encore-id="icon" role="img" aria-hidden="true"
+                        class="e-91000-icon e-91000-baseline yoyv1_1LPucwCXYDe5AN" viewBox="0 0 16 16"
+                        style="--encore-icon-height: var(--encore-graphic-size-decorative-smaller); --encore-icon-width: var(--encore-graphic-size-decorative-smaller);">
+                        <path
+                            d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75">
+                        </path>
+                    </svg></button>
+            </div>
+            <section class="library-section">
+                <h2>Create your first playlist</h2>
+                <h3>It’s easy, we’ll help you</h3>
+                <button id="create-playlist-button">Create playlist</button>
+            </section>
+            <section class="library-section">
+                <h2>Let’s find some podcasts to follow</h2>
+                <h3>We’ll keep you updated on new episodes</h3>
+                <button id="create-playlist-button">Browse podcasts</button>
+            </section>
+        </div>
+        <div id="hero-section" class="hero-section">
+            <div class="hero-section-header">
+                <button id="header-button1">All</button>
+                <button id="header-button2">Music</button>
+                <button id="header-button3">Podcast</button>
+            </div>
+            <div class="trending-songs">
+                <div class="div-svg"><svg id="left-btn-1" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11V8L8 12L12 16V13H16V11H12Z" />
+                    </svg></div>
+                    <div class="div-svg-2" ><svg id="right-btn-1" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11H8V13H12V16L16 12L12 8V11Z" />
+                    </svg>
+                </div>
+                <div class="flex-help-all-songs">
+                    <h2>Trending songs</h2>
+                    <button id="show-all-1" class="show-all">Show all</button>
+                    <button id="show-less-1" style="display: none;" class="show-all">Show less</button>
+                </div>
+                <div id="trending-songs-head" class="songs-head">
+
+
+                    <div class="songs">
+                        <img src="assets/trending-songs-1.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/trending-songs-2.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/trending-songs-3.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/trending-songs-4.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/trending-songs-5.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/trending-songs-6.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/trending-songs-7.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/trending-songs-8.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/trending-songs-9.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+
+                </div>
+            </div>
+            <div class="recommended-songs">
+                <div class="div-svg"><svg id="left-btn-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11V8L8 12L12 16V13H16V11H12Z" />
+                    </svg></div>
+                    <div class="div-svg-2" ><svg id="right-btn-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11H8V13H12V16L16 12L12 8V11Z" />
+                    </svg>
+                </div>
+                <h6>Inspired by your recent activity</h6>
+                <div class="flex-help-all-songs">
+                    <h2>Recommended for today</h2>
+                    <button id="show-all-2" class="show-all">Show all</button>
+                    <button id="show-less-2" style="display: none;" class="show-all">Show less</button>
+                </div>
+                <div id="rs-head" class="songs-head">
+
+                    <div class="songs">
+                        <img src="assets/1.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/2.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/3.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/4.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/5.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/6.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/7.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/8.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/9.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/10.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="recent-songs">
+               
+                <div class="flex-help-all-songs">
+                    <h2>Recently played</h2>
+                    <button id="show-all-3" class="show-all">Show all</button>
+                    <button id="show-less-3" style="display: none;" class="show-all">Show less</button>
+                </div>
+                <div id="rps-head" class="songs-head">
+
+                    <div class="songs">
+                        <img src="assets/8.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                    <div class="songs">
+                        <img src="assets/1.jfif" alt="">
+                        <h3>Gulaab</h3>
+                        <h4>AMR8, Praagya, Srijjan</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="popular-artists">
+                <div class="div-svg"><svg id="left-btn-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11V8L8 12L12 16V13H16V11H12Z" />
+                    </svg></div>
+                    <div class="div-svg-2">
+                        <svg id="right-btn-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11H8V13H12V16L16 12L12 8V11Z" />
+                    </svg>
+                    </div>
+                <div class="flex-help-all-songs">
+                    <h2>Popular artists</h2>
+                    <button id="show-all-4" class="show-all">Show all</button>
+                    <button id="show-less-4" style="display: none;" class="show-all">Show less</button>
+                </div>
+                <div id="pa-head" class="artist-head">
+
+                    <div class="artists">
+                        <div><img src="assets/artists1.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                    <div class="artists">
+                        <div><img src="assets/artists2.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                    <div class="artists">
+                        <div><img src="assets/artists3.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                    <div class="artists">
+                        <div><img src="assets/artists4.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                    <div class="artists">
+                        <div><img src="assets/artists5.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                    <div class="artists">
+                        <div><img src="assets/artists6.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                    <div class="artists">
+                        <div><img src="assets/artists7.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                    <div class="artists">
+                        <div><img src="assets/artists8.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                    <div class="artists">
+                        <div><img src="assets/artists9.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                    <div class="artists">
+                        <div><img src="assets/artists10.jfif" alt=""></div>
+                        <h3>xyz Name</h3>
+                        <h4>artist</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="charts">
+                <div class="div-svg"><svg id="left-btn-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11V8L8 12L12 16V13H16V11H12Z" />
+                    </svg></div>
+                    <div class="div-svg-2" ><svg id="right-btn-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11H8V13H12V16L16 12L12 8V11Z" />
+                    </svg>
+                </div>
+                <div class="flex-help-all-songs">
+                    <h2>Charts</h2>
+                    <button id="show-all-5" class="show-all">Show all</button>
+                    <button id="show-less-5" style="display: none;" class="show-all">Show less</button>
+                </div>
+                <div id="c-head" class="charts-head">
+
+                    <div class="chart">
+                        <img src="assets/charts1.jfif" alt="">
+                        <h3></h3>
+                        <h4></h4>
+                    </div>
+                    <div class="chart">
+                        <img src="assets/charts2.jfif" alt="">
+                        <h3></h3>
+                        <h4></h4>
+                    </div>
+                    <div class="chart">
+                        <img src="assets/charts3.jfif" alt="">
+                        <h3></h3>
+                        <h4></h4>
+                    </div>
+                    <div class="chart">
+                        <img src="assets/charts5.jfif" alt="">
+                        <h3></h3>
+                        <h4></h4>
+                    </div>
+                    <div class="chart">
+                        <img src="assets/charts6.jfif" alt="">
+                        <h3></h3>
+                        <h4></h4>
+                    </div>
+                    <div class="chart">
+                        <img src="assets/charts7.webp" alt="">
+                        <h3></h3>
+                        <h4></h4>
+                    </div>
+                    <div class="chart">
+                        <img src="assets/charts8.jfif" alt="">
+                        <h3></h3>
+                        <h4></h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="bottom-music-panel">
+            <div class="flex-help-1-bottom-panel">
+                <img id="img-2-forjs" src="assets/1.jfif" alt="">
+                <div class="bottom-panel-text">
+                    <h3>Title of music</h3>
+                    <h4>about music</h4>
+                </div>
+                <svg id="plus-button-bottom-music-panel" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-plus-circle">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+            </div>
+            <div class="flex-help-2-bottom-panel">
+                <div class="controls">
+                    <div class="controls-buttons">
+                        <svg style="background-color: black;" xmlns="http://www.w3.org/2000/svg" fill="#000000"
+                            width="800px" height="800px" viewBox="0 0 24 24" id="shuffle" data-name="Flat Line"
+                            class="icon flat-line">
+                            <path id="primary" d="M3,8H5.28a6,6,0,0,1,4.51,2.05L13.21,14A6,6,0,0,0,17.72,16H21"
+                                style="fill: #ffffff;stroke: rgb(255 255 255);stroke-linecap: round;stroke-linejoin: round;stroke-width: 2;" />
+                            <polyline id="primary-2" data-name="primary" points="19 14 21 16 19 18"
+                                style="fill: none;stroke: rgb(255 255 255);stroke-linecap: round;stroke-linejoin: round;stroke-width: 2;" />
+                            <path id="primary-3" data-name="primary"
+                                d="M21,8H17.72a6,6,0,0,0-4.51,2.05L9.79,14A6,6,0,0,1,5.28,16H3"
+                                style="fill: white;stroke: rgb(255 255 255);stroke-linecap: round;stroke-linejoin: round;stroke-width: 2;" />
+                            <polyline id="primary-4" data-name="primary" points="19 6 21 8 19 10"
+                                style="fill: none;stroke: rgb(255 255 255);stroke-linecap: round;stroke-linejoin: round;stroke-width: 2;" />
+                        </svg>
+                        <svg height="34px" width="34px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 496.158 496.158"
+                            xml:space="preserve">
+                            <path style="fill:#000000;" d="M0,248.085C0,111.063,111.07,0.002,248.076,0.002c137.012,0,248.082,111.061,248.082,248.082
+	c0,137.002-111.07,248.071-248.082,248.071C111.07,496.155,0,385.086,0,248.085z" />
+                            <g>
+                                <path style="fill:#FFFFFF;" d="M208.121,236.937l149.525-91.812c4.082-2.506,9.453-2.615,13.633-0.275
+		c4.254,2.379,6.896,6.887,6.896,11.762v182.901c0,4.867-2.633,9.369-6.877,11.754c-2.01,1.129-4.293,1.727-6.602,1.727
+		c-2.475,0-4.9-0.682-7.012-1.969l-149.523-91.088c-3.98-2.424-6.459-6.826-6.467-11.489
+		C201.687,243.787,204.15,239.375,208.121,236.937z" />
+                                <path style="fill:#FFFFFF;" d="M126.564,139.057h51.508c4.74,0,8.584,3.844,8.584,8.584v200.877c0,4.74-3.844,8.584-8.584,8.584
+		h-51.508c-4.74,0-8.582-3.844-8.582-8.584V147.64C117.982,142.9,121.824,139.057,126.564,139.057z" />
+                            </g>
+                        </svg>
+                        <svg id="pause-button" style="width: 35px; height: 45px; display: none;" viewBox="0 0 24 24"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9 9V15H11V9H9ZM13 9V15H15V9H13Z" />
+                        </svg>
+                        <svg id="play-button" style="width: 35px; height: 45px; display: block;" viewBox="0 0 24 24"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM10.6219 8.41459C10.5562 8.37078 10.479 8.34741 10.4 8.34741C10.1791 8.34741 10 8.52649 10 8.74741V15.2526C10 15.3316 10.0234 15.4088 10.0672 15.4745C10.1897 15.6583 10.4381 15.708 10.6219 15.5854L15.5008 12.3328C15.5447 12.3035 15.5824 12.2658 15.6117 12.2219C15.7343 12.0381 15.6846 11.7897 15.5008 11.6672L10.6219 8.41459Z" />
+                        </svg>
+
+                        <svg height="34px" width="34px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 496.158 496.158"
+                            xml:space="preserve">
+                            <path style="fill:#000000;" d="M496.158,248.085c0-137.021-111.07-248.082-248.076-248.082C111.07,0.002,0,111.062,0,248.085
+	c0,137.002,111.07,248.071,248.083,248.071C385.088,496.155,496.158,385.086,496.158,248.085z" />
+                            <g>
+                                <path style="fill:#FFFFFF;" d="M288.037,236.937l-149.525-91.812c-4.082-2.506-9.453-2.615-13.632-0.275
+		c-4.255,2.379-6.897,6.887-6.897,11.762v182.901c0,4.867,2.634,9.369,6.877,11.754c2.011,1.129,4.294,1.727,6.603,1.727
+		c2.475,0,4.899-0.682,7.011-1.969l149.523-91.088c3.98-2.424,6.459-6.826,6.467-11.489
+		C294.47,243.787,292.008,239.375,288.037,236.937z" />
+                                <path style="fill:#FFFFFF;" d="M369.593,139.057h-51.507c-4.741,0-8.584,3.844-8.584,8.584v200.877c0,4.74,3.843,8.584,8.584,8.584
+		h51.507c4.74,0,8.583-3.844,8.583-8.584V147.64C378.176,142.9,374.333,139.057,369.593,139.057z" />
+                            </g>
+                        </svg>
+                        <svg fill="white" width="30px" height="30px" viewBox="0 0 1024 1024"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M960 101.84l-896.002.002c-35.344 0-64 28.656-64 64v576c0 35.36 28.656 64 64 64h160c20.496 0 32-26.32 32-31.984v-.016c0-5.824-10.88-32.416-32-32.416h-120.96c-21.376 0-38.72-17.344-38.72-38.72V206.002c0-21.391 17.328-38.72 38.72-38.72l818.272-1.007c21.376 0 38.72 17.328 38.72 38.72V702.69c0 21.376-17.344 38.72-38.72 38.72H518.142l75.984-68.912c9.344-8.944 12.369-23.408 3.025-32.336l-5.472-8.064c-9.376-8.945-24.496-8.945-33.84 0L428.111 750.53c-.192.16-.368.224-.528.368l-8.48 8.096c-4.672 4.431-7.008 10.335-6.976 16.223-.032 5.904 2.288 11.777 6.977 16.288l8.48 8.096c.16.16.368.192.528.336L555.84 915.44c9.344 8.944 24.464 8.944 33.84 0l5.472-8.065c9.344-8.944 6.32-23.44-3.025-32.368l-77.135-69.168H960c35.343 0 64-28.64 64-64v-576c0-35.344-28.657-64-64-64z" />
+                        </svg>
+                    </div>
+                    <div class="timer">
+                        <span id="timer-js-span">0:00</span>
+                        <div>
+                            <div id="timer-js"><button></button></div>
+                        </div>
+                        <span id="timer-js-span-2">2:35</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-help-3-bottom-panel">
+                <div class="other-bottom-panel-buttons">
+                    <div class="volume">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.88889 16.0001H2C1.44772 16.0001 1 15.5524 1 15.0001V9.00007C1 8.44778 1.44772 8.00007 2 8.00007H5.88889L11.1834 3.66821C11.3971 3.49335 11.7121 3.52485 11.887 3.73857C11.9601 3.8279 12 3.93977 12 4.05519V19.9449C12 20.2211 11.7761 20.4449 11.5 20.4449C11.3846 20.4449 11.2727 20.405 11.1834 20.3319L5.88889 16.0001ZM20.4142 12.0001L23.9497 15.5356L22.5355 16.9498L19 13.4143L15.4645 16.9498L14.0503 15.5356L17.5858 12.0001L14.0503 8.46454L15.4645 7.05032L19 10.5859L22.5355 7.05032L23.9497 8.46454L20.4142 12.0001Z" />
+                        </svg>
+                        <div>
+                            <div><button></button></div>
+                        </div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 3H22V9H20V5H16V3ZM2 3H8V5H4V9H2V3ZM20 19V15H22V21H16V19H20ZM4 19H8V21H2V15H4V19Z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21 3C21.5523 3 22 3.44772 22 4V11H20V5H4V19H10V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM21 13C21.5523 13 22 13.4477 22 14V20C22 20.5523 21.5523 21 21 21H13C12.4477 21 12 20.5523 12 20V14C12 13.4477 12.4477 13 13 13H21ZM20 15H14V19H20V15Z" />
+                    </svg>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="forjs-music-panel" class="forjs-music-panel">
+            <svg id="back-button-forjs" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-arrow-left">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <div class="music-bar-forjs">
+                <img id="img-1-forjs" src="assets/1.jfif" alt="">
+                <div class="title-music-bar-forjs">
+                    <h5>album</h5>
+                    <h1>XYZ -Song Name</h1>
+                    <h4>AUTHOR NAME </h4>
+                </div>
+            </div>
+            <div class="list-forjs">
+                <div class="list-buttons-forjs">
+                    <div class="flex-help-list-buttons-forjs">
+                        <svg id="pause-button-forjs" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9 9V15H11V9H9ZM13 9V15H15V9H13Z" />
+                        </svg>
+
+                        <svg id="play-button-forjs" viewBox="0 0 24 24" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM10.6219 8.41459C10.5562 8.37078 10.479 8.34741 10.4 8.34741C10.1791 8.34741 10 8.52649 10 8.74741V15.2526C10 15.3316 10.0234 15.4088 10.0672 15.4745C10.1897 15.6583 10.4381 15.708 10.6219 15.5854L15.5008 12.3328C15.5447 12.3035 15.5824 12.2658 15.6117 12.2219C15.7343 12.0381 15.6846 11.7897 15.5008 11.6672L10.6219 8.41459Z" />
+                        </svg>
+
+
+                        <svg id="plus-button-forjs" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+
+                        <svg id="download-button-forjs" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-download">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+
+                        <svg id="three-dot-forjs" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="19" cy="12" r="1"></circle>
+                            <circle cx="5" cy="12" r="1"></circle>
+                        </svg>
+                    </div>
+                    <div class="flex-help-list-buttons-forjs">
+                        <h5 id="list-3line-button-forjs">
+                            List</h5>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-menu">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="suggested-songs-forjs">
+                    <div class="suggested-songs-top-forjs">
+                        <h5># Title </h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="songs-list-forjs">
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>1</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>2</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>3</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>4</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>5</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>6</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>7</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>8</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>9</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>10</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>11</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>12</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>13</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>14</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+                    <div class="list-song">
+                        <div class="flex-help-to-adjust-time-position-forjs">
+                            <div class="num">
+                                <h3>15</h3>
+                            </div>
+                            <div class="list-song-main">
+                                <img class="list-img" src="assets/1.jfif" alt="">
+                                <div class="flex-help-list-song-forjs">
+                                    <h3>XYZ text - Title Track</h3>
+                                    <h4>Lorem ipsum dolor sit amet...</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-of-song">
+                            <h3>2:35</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <div id="alert-2" class="alert">
+    <h2>View this web on only desktop, as its not responsive and layouts can break</h2>
+    <div id="abz-2"><button id="ok-button-2">OK</button></div>
+</div>
+
+
+<div  id="alert" class="alert">
+    <div class="alert-head"><h1>NOTE :</h1> <h3>(this web is non-functional and not responsive)</h3></div>
+    <h2>Welcome to the demo!
+This is a Spotify-inspired layout project created to showcase UI design and interaction patterns. It is not a functional music streaming platform. Features like playing songs, creating playlists, signing in, or managing libraries are intentionally unavailable. Enjoy exploring the design and layout experience!</h2>
+
+<div id="abz"><button id="ok-button">OK</button></div>
+</div>
+
+
+    <script src="right.js"></script>
+
+</body>
+
+</html>
