@@ -453,3 +453,35 @@ justify-content: center;
 
 
     }
+
+
+    #sorry{
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        text-align: center;
+        background: linear-gradient(
+            90deg,
+    rgb(39, 4, 4) 0%,
+    rgb(91, 2, 2) 50%,
+    rgb(39, 4, 4) 100%
+        );
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        top: 30vh;
+        display: none;
+    }
+
+    #sorry a{
+        color: aqua;
+    }
+    .note-at-webclones-end{
+        color: rgb(255, 255, 255);
+    background-color:#000000;
+       padding-inline-start: 10px;
+       margin-block: 0px !important;
+       padding-block: 0px !important;
+    }
+
+    

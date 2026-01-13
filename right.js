@@ -34,7 +34,7 @@ ph2.addEventListener("click",()=>{
     iframe2.style.display="block"
     iframe1.style.display="none"
     exit.style.display="block"
-    alert("NetFlix clone is responsive, but Spotify clone is intensionally made Non-responsive So plese Preview it on only Desktop, OR you can go through Netflix Clone as it is responsive.")
+    alert("Netflix clone is responsive, but Spotify clone is intensionally made Non-responsive So plese Preview it on only Desktop, OR you can go through Netflix Clone as it is responsive.")
 })
 
 
@@ -60,6 +60,7 @@ let img6a=document.getElementById("img6a")
 let img6b=document.getElementById("img6b")
 
 function img_slider(a,b,c){
+let timer;
 
     a.addEventListener("mouseover",()=>{
         b.style.animation="ani1 1s 1 ease-in"
@@ -67,9 +68,10 @@ function img_slider(a,b,c){
         c.style.justifySelf="flex-end"
         b.style.transform="translateX(-100%)"
         c.style.transform="translateX(100%)"
+        clearTimeout(timer)
     })
     a.addEventListener("mouseleave",()=>{
-     setTimeout(() => {
+     timer= setTimeout(() => {
         b.style.animation="rani1 1s 1 ease-in"
         c.style.animation="rani2 1s 1 ease-in"
         c.style.justifySelf="flex-end"
@@ -88,3 +90,72 @@ img_slider(b4,img4a,img4b)
 img_slider(b5,img5a,img5b)
 img_slider(b6,img6a,img6b)
 
+let vl_1=document.getElementById("vl-1")
+let vl_2=document.getElementById("vl-2")
+let sorry=document.getElementById("sorry")
+let sph=document.getElementById("sorry-preview-here")
+
+vl_1.addEventListener("click",()=>{
+    setTimeout(() => {
+    sorry.style.display="block"    
+    }, 500);
+ window.addEventListener("scroll",()=>{
+    sorry.style.display="none"
+ })
+  
+   window.scrollTo({
+    top: 0,
+    behavior: "smooth"})
+
+sph.addEventListener("click",()=>{
+    sorry.style.display="none"
+    iframe1.style.display="block"
+    iframe2.style.display="none"
+    exit.style.display="block"
+    window.scrollTo({
+        top: 1000,
+        behavior: "smooth"
+    })
+}) 
+})
+
+
+
+vl_2.addEventListener("click",()=>{
+    setTimeout(() => {
+      sorry.style.display="block"    
+    }, 500);
+ window.addEventListener("scroll",()=>{
+    sorry.style.display="none"
+ })
+  
+     window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+})
+
+sph.addEventListener("click",()=>{
+    sorry.style.display="none"
+    iframe2.style.display="block"
+    iframe1.style.display="none"
+    exit.style.display="block"
+    window.scrollTo({
+        top: 1000,
+        behavior: "smooth"
+    })
+})
+    })   
+
+    const links = document.querySelectorAll("a");
+
+links.forEach(link => {
+  link.setAttribute("target", "_blank");
+  link.setAttribute("rel", "noopener noreferrer");
+});
+
+let video = document.getElementById("background-video");
+
+video.addEventListener("click", () => {
+//   video.currentTime = 0;
+  video.play();         
+});
